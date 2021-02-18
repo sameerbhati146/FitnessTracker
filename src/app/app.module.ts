@@ -15,8 +15,9 @@ import { NewTrainingComponent } from "./training/new-training/new-training.compo
 import { PastTrainingComponent } from "./training/past-training/past-training.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { MatCardModule } from "@angular/material";
-import { HeaderComponent } from './navigation/header/header.component';
-import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { HeaderComponent } from "./navigation/header/header.component";
+import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
+import { DialogboxComponent } from "./common/dialogbox/dialogbox.component";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
+    DialogboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,5 +45,6 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [DialogboxComponent],
 })
 export class AppModule {}

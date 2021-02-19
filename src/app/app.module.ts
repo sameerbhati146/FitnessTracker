@@ -18,6 +18,7 @@ import { MatCardModule } from "@angular/material";
 import { HeaderComponent } from "./navigation/header/header.component";
 import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
 import { DialogboxComponent } from "./common/dialogbox/dialogbox.component";
+import { AuthService } from "./auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { DialogboxComponent } from "./common/dialogbox/dialogbox.component";
     ReactiveFormsModule,
     MatCardModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   entryComponents: [DialogboxComponent],
 })

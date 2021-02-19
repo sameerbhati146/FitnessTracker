@@ -12,3 +12,7 @@ a:active {
 .light-text{
   font-weight: 300;
 }
+
+.btn {
+  cursor: pointer;
+}

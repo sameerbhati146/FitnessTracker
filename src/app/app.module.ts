@@ -15,6 +15,10 @@ import { NewTrainingComponent } from "./training/new-training/new-training.compo
 import { PastTrainingComponent } from "./training/past-training/past-training.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { MatCardModule } from "@angular/material";
+import { HeaderComponent } from "./navigation/header/header.component";
+import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
+import { DialogboxComponent } from "./common/dialogbox/dialogbox.component";
+import { AuthService } from "./auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -26,6 +30,9 @@ import { MatCardModule } from "@angular/material";
     NewTrainingComponent,
     PastTrainingComponent,
     WelcomeComponent,
+    HeaderComponent,
+    SidenavListComponent,
+    DialogboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,8 @@ import { MatCardModule } from "@angular/material";
     ReactiveFormsModule,
     MatCardModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
+  entryComponents: [DialogboxComponent],
 })
 export class AppModule {}

@@ -1,0 +1,21 @@
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+}
+
+a:hover,
+a:active {
+  color: lightgray;
+}
+
+.navigation-icon {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-caption{
+  display: inline-block;
+  padding-left: 6px;
+}

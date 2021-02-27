@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from "@angular/core";
 import { MatDialog } from "@angular/material";
 
 import { DialogboxComponent } from "../../common/dialogbox/dialogbox.component";
+import { TrainingService } from "../training.service";
 
 @Component({
   selector: "app-current-training",
@@ -9,24 +10,34 @@ import { DialogboxComponent } from "../../common/dialogbox/dialogbox.component";
   styleUrls: ["./current-training.component.css"],
 })
 export class CurrentTrainingComponent implements OnInit {
-  @Output() trainingExit = new EventEmitter();
+  // @Output() trainingExit = new EventEmitter();
   progress = 0;
   timer: number;
 
-  constructor(private matDialog: MatDialog) {}
+  constructor(
+    private matDialog: MatDialog,
+    private trainingService: TrainingService
+  ) {}
 
   ngOnInit() {
     this.startTraining();
   }
 
   startTraining() {
+    const step =
+      (this.trainingService.getRunningExercise().duration / 100) * 1000;
     this.timer = setInterval(() => {
-      this.progress = this.progress + 20;
+      this.progress = this.progress + 1;
       if (this.progress >= 100) {
+        this.trainingService.completeTraining();
         clearInterval(this.timer);
       }
-    }, 1000);
+    }, step);
   }
+
+  completeExercise() {}
+
+  cancelExercise() {}
 
   onStop() {
     clearInterval(this.timer);
@@ -38,7 +49,7 @@ export class CurrentTrainingComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.trainingExit.emit();
+        this.trainingService.cancelTraining(this.progress);
       } else {
         this.startTraining();
       }

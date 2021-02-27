@@ -19,6 +19,7 @@ import { HeaderComponent } from "./navigation/header/header.component";
 import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
 import { DialogboxComponent } from "./common/dialogbox/dialogbox.component";
 import { AuthService } from "./auth/auth.service";
+import { TrainingService } from "./training/training.service";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { AuthService } from "./auth/auth.service";
     ReactiveFormsModule,
     MatCardModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, TrainingService],
   bootstrap: [AppComponent],
   entryComponents: [DialogboxComponent],
 })

@@ -1,5 +1,5 @@
 <section class="new-training" fxLayout fxLayoutAlign="center center">
-  <form ngSbmit="onStartTraining(f)" #f="ngForm">
+  <form (ngSubmit)="onStartTraining(f)" #f="ngForm">
     <mat-card class="card" fxFlex="400px">
       <mat-card-title fxLayoutAlign="center">Time to start a workout!</mat-card-title>
       <mat-card-content class="card-content" fxLayoutAlign="center">

@@ -1,3 +1,4 @@
+
 <div fxLayoutAlign="center center">
   <mat-form-field fxFlex="40%">
     <mat-label>Filter</mat-label>
@@ -8,24 +9,24 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
   <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef>Date</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
     <td mat-cell *matCellDef="let element">{{element.date | date}}</td>
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
     <td mat-cell *matCellDef="let element">{{element.name}}</td>
   </ng-container>
   <ng-container matColumnDef="calories">
-    <th mat-header-cell *matHeaderCellDef>Calories (Kcal)</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Calories (Kcal)</th>
     <td mat-cell *matCellDef="let element">{{element.calories | number}}</td>
   </ng-container>
   <ng-container matColumnDef="duration">
-    <th mat-header-cell *matHeaderCellDef>Duration (second's)</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Duration (second's)</th>
     <td mat-cell *matCellDef="let element">{{element.duration | number}}</td>
   </ng-container>
   <ng-container matColumnDef="state">
-    <th mat-header-cell *matHeaderCellDef>State</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>State</th>
     <td mat-cell *matCellDef="let element">{{element.state}}</td>
   </ng-container>
 
